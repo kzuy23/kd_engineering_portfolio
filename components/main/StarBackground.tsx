@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, Suspense } from "react";
+import React, { useState, useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 // @ts-ignore
@@ -16,7 +16,6 @@ const StarBackground = (props: any) => {
     ref.current.rotation.x -= delta/10;
     ref.current.rotation.y -= delta/15;
   })
-
 
   return (
     <group rotation={[0,0, Math.PI / 4]}>
@@ -39,14 +38,26 @@ const StarBackground = (props: any) => {
   )
 };
 
-const StarsCanvas = () => (
+const StarsCanvas = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return (
     <div className="w-full h-auto fixed inset-0 z-[20]">
-        <Canvas camera={{position: [0, 0, 1]}}>
+      <Canvas camera={{position: [0, 0, 1]}}>
         <Suspense fallback={null}>
-            <StarBackground />
+          <StarBackground />
         </Suspense>
-        </Canvas>
+      </Canvas>
     </div>
-)
+  );
+};
 
 export default StarsCanvas;
