@@ -1,11 +1,10 @@
 "use client";
 
 import {
-  Backend_skill,
-  Frontend_skill,
-  Full_stack,
-  Other_skill,
-  Skill_data,
+  Programming,
+  CAD_Tools,
+  AI_Frameworks,
+  Manufacturing,
 } from "@/constants";
 import React, { useEffect, useState } from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
@@ -21,68 +20,68 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-40 py-20"
       style={{ transform: "scale(0.9)" }}
     >
       <SkillText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Skill_data.map((image, index) => (
+      {/* Programming & Tools */}
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center max-w-6xl">
+        {Programming.map((skill, index) => (
           <SkillDataProvider
             key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
+            src={skill.Image}
+            width={skill.width}
+            height={skill.height}
             index={index}
+            skill_name={skill.skill_name}
           />
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Frontend_skill.map((image, index) => (
+      {/* CAD & Simulation */}
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center max-w-6xl">
+        {CAD_Tools.map((skill, index) => (
           <SkillDataProvider
             key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
+            src={skill.Image}
+            width={skill.width}
+            height={skill.height}
             index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Full_stack.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Other_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
+            skill_name={skill.skill_name}
           />
         ))}
       </div>
 
+      {/* AI Frameworks */}
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center max-w-6xl">
+        {AI_Frameworks.map((skill, index) => (
+          <SkillDataProvider
+            key={index}
+            src={skill.Image}
+            width={skill.width}
+            height={skill.height}
+            index={index}
+            skill_name={skill.skill_name}
+          />
+        ))}
+      </div>
+
+      {/* Manufacturing */}
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center max-w-6xl">
+        {Manufacturing.map((skill, index) => (
+          <SkillDataProvider
+            key={index}
+            src={skill.Image}
+            width={skill.width}
+            height={skill.height}
+            index={index}
+            skill_name={skill.skill_name}
+          />
+        ))}
+      </div>
+
+      {/* Background video */}
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           {mounted && (

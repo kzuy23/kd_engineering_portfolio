@@ -14,7 +14,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-col items-center justify-center px-20 mt-10 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center items-center text-center">
         
@@ -45,14 +45,14 @@ const HeroContent = () => {
           </span>
         </motion.div>
 
-        {/* Subtitle - Education (One Line) */}
+        {/* Subtitle - Education */}
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-xl text-gray-300 my-3 max-w-[900px] text-center leading-relaxed"
         >
           Pursuing M.S. in Mechanical Engineering and Applied Mechanics
           <br />
-          @ <span className="text-purple-400 font-semibold whitespace-nowrap">University of Pennsylvania</span>
+          at the <span className="text-purple-400 font-semibold whitespace-nowrap">University of Pennsylvania</span>
         </motion.p>
 
         {/* Status with Blur Effect and Custom Emoji Image */}
@@ -65,7 +65,7 @@ const HeroContent = () => {
             <span>Open to any opportunities</span>
             <Image 
               src="/emoji_beggar2.png" 
-              alt="emoji_beggar" 
+              alt="money emoji" 
               width={40} 
               height={40}
               className="inline-block"
@@ -76,7 +76,7 @@ const HeroContent = () => {
         {/* Call to Action Buttons */}
         <motion.div
           variants={slideInFromLeft(1)}
-          className="flex flex-row gap-4 mt-8"
+          className="flex flex-row gap-4 mt-4"
         >
           <a
             href="#projects"
@@ -84,7 +84,7 @@ const HeroContent = () => {
           >
             View Projects
           </a>
-
+          
           <a
             href="#contact"
             className="py-3 px-6 border-2 border-purple-500 text-center text-white cursor-pointer rounded-lg hover:bg-purple-500/20 transition"
