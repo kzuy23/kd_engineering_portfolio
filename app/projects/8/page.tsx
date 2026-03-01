@@ -131,7 +131,7 @@ export default function CameraShutterProject() {
                 </p>
 
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  The camera shutter mechanism operates through a sophisticated linkage system where an outer rotating disc drives 12 individual blades via pins and sliding joints. Each blade follows a precisely calculated trajectory, with motion governed by the relationship between fixed center O, rotating center O', pin C, and slider D. The analysis focused on determining position, velocity, and acceleration profiles for all moving components throughout the complete opening-closing cycle.
+                  The camera shutter mechanism operates through a sophisticated linkage system where an outer rotating disc drives 12 individual blades via pins and sliding joints. Each blade follows a precisely calculated trajectory, with motion governed by the relationship between fixed center O, rotating center O&apos;, pin C, and slider D. The analysis focused on determining position, velocity, and acceleration profiles for all moving components throughout the complete opening-closing cycle.
                 </p>
 
               </div>

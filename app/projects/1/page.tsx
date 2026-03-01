@@ -147,7 +147,7 @@ export default function FedKoEProject() {
                 </p>
 
                 <p className="text-gray-300 leading-relaxed">
-                  Our FedKoE framework integrates a Mixture-of-Experts (MoE) architecture with Knowledge Distillation (KD), where stronger modalities actively teach weaker ones. Using a Softmax Gating function, we dynamically quantify each modality's importance and transfer predictive knowledge to achieve balanced multimodal fusion even under heterogeneous settings.
+                  Our FedKoE framework integrates a Mixture-of-Experts (MoE) architecture with Knowledge Distillation (KD), where stronger modalities actively teach weaker ones. Using a Softmax Gating function, we dynamically quantify each modality&apos;s importance and transfer predictive knowledge to achieve balanced multimodal fusion even under heterogeneous settings.
                 </p>
               </div>
 
