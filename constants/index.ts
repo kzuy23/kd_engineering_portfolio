@@ -90,13 +90,13 @@ export const AI_Frameworks = [
     height: 80,
   },
   {
-    skill_name: "Librosa",
+    skill_name: "Librosa\nAudio Analysis",
     Image: "/librosa.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "MNE",
+    skill_name: "MNE\nMEG & EEG Analysis",
     Image: "/mne.png",
     width: 80,
     height: 80,

@@ -8,13 +8,14 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroContent = () => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center justify-center px-20 mt-10 w-full z-[20]"
+      className="flex flex-col items-center justify-center px-20 mt-48 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center items-center text-center">
         
@@ -40,58 +41,68 @@ const HeroContent = () => {
               Duy Khuong
             </span>
           </span>
+
           <span className="text-center text-5xl whitespace-nowrap">
             Welcome to my engineering portfolio
           </span>
         </motion.div>
 
-        {/* Subtitle - Education */}
+        {/* Subtitle */}
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-xl text-gray-300 my-3 max-w-[900px] text-center leading-relaxed"
         >
           Pursuing M.S. in Mechanical Engineering and Applied Mechanics
           <br />
-          at the <span className="text-purple-400 font-semibold whitespace-nowrap">University of Pennsylvania</span>
+          at the{" "}
+          <span className="text-purple-400 font-semibold whitespace-nowrap">
+            University of Pennsylvania
+          </span>
         </motion.p>
 
-        {/* Status with Blur Effect and Custom Emoji Image */}
+        {/* Status */}
         <motion.div
           variants={slideInFromLeft(0.9)}
           className="group relative my-3 cursor-default flex items-center gap-3"
         >
           <div className="text-lg text-gray-400 blur-sm group-hover:blur-none transition-all duration-300 flex items-center gap-3">
-            <span className="font-semibold text-cyan-400">Status:</span> 
+            <span className="font-semibold text-cyan-400">
+              Status:
+            </span>
             <span>Open to any opportunities</span>
-            <Image 
-              src="/emoji_beggar2.png" 
-              alt="money emoji" 
-              width={40} 
+
+            <Image
+              src="/emoji-beggar.png"
+              alt="money emoji"
+              width={40}
               height={40}
               className="inline-block"
             />
           </div>
         </motion.div>
 
-        {/* Call to Action Buttons */}
+        {/* Buttons */}
         <motion.div
           variants={slideInFromLeft(1)}
           className="flex flex-row gap-4 mt-4"
         >
-          <a
-            href="#projects"
-            className="py-3 px-6 button-primary text-center text-white cursor-pointer rounded-lg hover:scale-105 transition-transform"
+          {/* Projects page */}
+          <Link
+            href="/projects"
+            className="py-3 px-6 button-primary text-white rounded-lg hover:scale-105 transition-transform"
           >
             View Projects
-          </a>
-          
+          </Link>
+
+          {/* Contact section */}
           <a
             href="#contact"
-            className="py-3 px-6 border-2 border-purple-500 text-center text-white cursor-pointer rounded-lg hover:bg-purple-500/20 transition"
+            className="py-3 px-6 border-2 border-purple-500 text-white rounded-lg hover:bg-purple-500/20 transition"
           >
             Contact Me
           </a>
         </motion.div>
+
       </div>
     </motion.div>
   );

@@ -1,15 +1,34 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import { RxLinkedinLogo } from "react-icons/rx";
-import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleSectionClick = (sectionId: string) => {
+    // If we're on the home page, just scroll to section
+    if (pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If we're on another page, navigate to home then scroll
+      router.push(`/#${sectionId}`);
+    }
+  };
+
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         
-        {/* Empty space on left (logo removed) */}
+        {/* Empty space on left */}
         <div className="w-[100px]"></div>
 
         {/* Navigation Menu - Centered */}
@@ -18,21 +37,27 @@ const Navbar = () => {
             <Link href="/" className="cursor-pointer hover:text-purple-400 transition">
               Home
             </Link>
-            <a href="#about" className="cursor-pointer hover:text-purple-400 transition">
+            <button 
+              onClick={() => handleSectionClick("about")}
+              className="cursor-pointer hover:text-purple-400 transition"
+            >
               About
-            </a>
-            <a href="#projects" className="cursor-pointer hover:text-purple-400 transition">
+            </button>
+            <Link href="/projects" className="cursor-pointer hover:text-purple-400 transition">
               Projects
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/resume" 
               className="cursor-pointer hover:text-purple-400 transition"
             >
               Resume
-            </a>
-            <a href="#contact" className="cursor-pointer hover:text-purple-400 transition">
+            </Link>
+            <button 
+              onClick={() => handleSectionClick("contact")}
+              className="cursor-pointer hover:text-purple-400 transition"
+            >
               Contact
-            </a>
+            </button>
           </div>
         </div>
 
@@ -45,14 +70,6 @@ const Navbar = () => {
             className="hover:scale-110 transition-transform"
           >
             <RxLinkedinLogo className="text-gray-300 w-6 h-6" />
-          </a>
-          <a 
-            href="https://github.com/yourusername" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <FaGithub className="text-gray-300 w-6 h-6" />
           </a>
           <a 
             href="mailto:kd23132@seas.upenn.edu"
