@@ -156,7 +156,7 @@ export default function BattleBotProject() {
                       }
                     }}
                   >
-                    <source src="/battle_bot/Success wall follow.mp4#t=0.1" type="video/mp4" />
+                    <source src="/battle_bot/Success_wall_follow.mp4#t=0.1" type="video/mp4" />
                   </video>
                   
                   <div 
