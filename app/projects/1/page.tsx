@@ -1,13 +1,30 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link"; // Recommended for internal links, though <a> is fine for external
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
+const galleryImages = [
+  { src: "/paper_demo.png", alt: "Federated Learning Protocol Visualization" },
+  { src: "/federated_learning.png", alt: "Federated Learning Architecture" },
+  { src: "/multimodal_fl.png", alt: "Multimodal Federated Learning Diagram" },
+];
+
 export default function FedKoEProject() {
   const router = useRouter();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [isHovered]);
 
   return (
     <div className="min-h-screen w-full bg-[#030014] relative">
@@ -48,14 +65,51 @@ export default function FedKoEProject() {
             {/* Left Column */}
             <div className="space-y-6">
 
-              {/* Image */}
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-purple-500/30 bg-white/5">
-                <Image
-                  src="/paper_demo.png"
-                  alt="Federated Learning Protocol Visualization"
-                  fill
-                  className="object-contain p-4"
-                />
+              {/* Photo Gallery */}
+              <div
+                className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-purple-500/30 bg-gray-900"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={galleryImages[currentImageIndex].src}
+                    alt={galleryImages[currentImageIndex].alt}
+                    fill
+                    className="object-contain p-4 transition-opacity duration-500"
+                  />
+                </div>
+
+                {/* Thumbnail Navigation */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <div className="flex gap-2 justify-center flex-wrap">
+                    {galleryImages.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`relative w-16 h-12 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
+                          idx === currentImageIndex
+                            ? "border-cyan-400 scale-110"
+                            : "border-gray-600 opacity-60 hover:opacity-100"
+                        }`}
+                      >
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          className="object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pause Indicator */}
+                {isHovered && (
+                  <div className="absolute top-4 right-4 bg-black/70 px-3 py-1 rounded-full text-white text-sm">
+                    Paused
+                  </div>
+                )}
               </div>
 
               {/* Links */}
