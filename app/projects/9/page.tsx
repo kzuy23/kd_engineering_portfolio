@@ -152,7 +152,7 @@ export default function FrankaProject() {
                   <li className="flex items-start gap-3">
                     <span className="text-cyan-400 mt-1 text-xl">•</span>
                     <span className="leading-relaxed">
-                      Designed a "Fixed-Position Periodic Grabbing" strategy for dynamic turntable blocks, eliminating unreliable vision-based trajectory prediction.
+                      Designed a &ldquo;Fixed-Position Periodic Grabbing&rdquo; strategy for dynamic turntable blocks, eliminating unreliable vision-based trajectory prediction.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
