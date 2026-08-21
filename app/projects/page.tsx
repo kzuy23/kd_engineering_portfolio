@@ -23,6 +23,14 @@ const projects = [
     skills: ["ANSYS", "SolidWorks", "CNC Machining", "Embedded System"],
   },
   {
+    id: 9,
+    title: "Pick and Place Challenge",
+    category: "Robotics",
+    description: "Programmed a Franka Emika Panda robot arm to autonomously pick and stack blocks from a static platform and a rotating turntable using Inverse Kinematics and computer vision.",
+    image: "/franka_proj/pfp.jpg",
+    skills: ["Python", "ROS", "Inverse Kinematics", "Gazebo", "Computer Vision"],
+  },
+  {
     id: 3,
     title: "Autonomous Battle Robot",
     category: "Mechatronics",
