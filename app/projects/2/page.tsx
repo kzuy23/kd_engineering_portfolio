@@ -12,6 +12,7 @@ const galleryImages = [
   { src: "/quadcopter/Final_integration.png", alt: "Final Integration" },
   { src: "/quadcopter/Raw_frame.png", alt: "Raw Carbon Fiber Frame" },
   { src: "/quadcopter/Wiring_diagram.png", alt: "Wiring Diagram" },
+  { src: "/quadcopter/3D-print.png", alt: "3D Printed Parts" },
 ];
 
 export default function QuadcopterProject() {
