@@ -7,6 +7,7 @@ import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 const galleryImages = [
   { src: "/barrier_gate/Cad_design.png", alt: "CAD Design" },
+  { src: "/barrier_gate/Quick_return_crank_motion_-_Side_View.gif", alt: "Quick-Return Crank Motion Animation" },
   { src: "/barrier_gate/cnc_lathe_pins.png", alt: "CNC Lathe Pins" },
   { src: "/barrier_gate/cnc_lathe_real.png", alt: "CNC Lathe Machining" },
   { src: "/barrier_gate/prototype_cutting_components.png", alt: "Prototype Components" },
@@ -78,6 +79,7 @@ export default function BarrierGateProject() {
                     src={galleryImages[currentImageIndex].src}
                     alt={galleryImages[currentImageIndex].alt}
                     fill
+                    unoptimized
                     className="object-contain p-4 transition-opacity duration-500"
                   />
                 </div>
@@ -99,6 +101,7 @@ export default function BarrierGateProject() {
                           src={img.src}
                           alt={img.alt}
                           fill
+                          unoptimized
                           className="object-cover"
                         />
                       </button>
